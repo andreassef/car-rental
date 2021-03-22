@@ -1,6 +1,6 @@
-import { categoriesRoutes } from "../../../routes/categories.routes";
-import { Category } from "../../cars/model/Category";
-import { ICategoriesRepository } from "../../cars/repositories/ICategoriesRepository";
+import { categoriesRoutes } from "../../../../routes/categories.routes";
+import { Category } from "../../model/Category";
+import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 
 class ListCategoriesUseCase {
