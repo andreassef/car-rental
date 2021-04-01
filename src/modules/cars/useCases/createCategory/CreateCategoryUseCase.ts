@@ -1,18 +1,16 @@
-import { CategoriesRepository } from "../../repositories/CategoriesRepository";
 import { ICategoriesRepository } from "../../repositories/implementations/ICategoriesRepository";
 
 interface IRequest {
-    name: string;
-    description: string;
+  name: string;
+  description: string;
 }
 
 class CreateCategoryUseCase {
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
-    constructor(private categoriesRepository: ICategoriesRepository) {}
-
-    execute({name, description}: IRequest): void {
-        this.categoriesRepository.create({name, description});
-    }
+  execute({ name, description }: IRequest): void {
+    this.categoriesRepository.create({ name, description });
+  }
 }
 
 export { CreateCategoryUseCase };
