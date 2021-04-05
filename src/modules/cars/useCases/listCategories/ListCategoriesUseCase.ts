@@ -1,15 +1,14 @@
 import { categoriesRoutes } from "../../../../routes/categories.routes";
-import { Category } from "../../model/Category";
+import { Category } from "../../entities/Category";
 import { ICategoriesRepository } from "../../repositories/implementations/ICategoriesRepository";
 
-
 class ListCategoriesUseCase {
-    constructor(private categoriesRepository: ICategoriesRepository) {};
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
-    execute(): Category[] {
-        const categories = this.categoriesRepository.list();
-        return categories;
-    }
+  execute(): Category[] {
+    const categories = this.categoriesRepository.list();
+    return categories;
+  }
 }
 
 export { ListCategoriesUseCase };
