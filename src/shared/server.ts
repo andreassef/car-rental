@@ -7,7 +7,7 @@ import swaggerFile from "../swagger.json";
 import { AppError } from "./errors/AppError";
 import { router } from "./infra/http/routes";
 
-import "../database";
+import "./infra/typeorm";
 
 import "./container";
 
