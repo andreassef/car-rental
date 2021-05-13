@@ -35,7 +35,6 @@ describe("Create Category Controller", () => {
     });
 
     const { token } = responseToken.body;
-    console.log(responseToken.body);
     await request(app)
       .post("/categories")
       .send({
@@ -48,8 +47,8 @@ describe("Create Category Controller", () => {
 
     const response = await request(app).get("/categories");
 
-    expect(response.status).toBe(201);
-    expect(response.body.lenght).toBe(1);
+    expect(response.status).toBe(200);
+    expect(response.body.length).toBe(1);
     expect(response.body[0]).toHaveProperty("id");
   });
 });
