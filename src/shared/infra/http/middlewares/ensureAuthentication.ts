@@ -1,3 +1,4 @@
+import auth from "@config/auth";
 import { NextFunction, Request, Response } from "express";
 import { verify } from "jsonwebtoken";
 
@@ -22,10 +23,7 @@ export async function ensureAuthenticated(
   const [, token] = authHeader.split(" ");
 
   try {
-    const { sub: user_id } = verify(
-      token,
-      "61111a408ca2466345550d4d84765275"
-    ) as IPayload;
+    const { sub: user_id } = verify(token, auth.secret_token) as IPayload;
 
     const usersRepository = new UsersRepository();
 
